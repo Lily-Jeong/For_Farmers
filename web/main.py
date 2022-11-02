@@ -1,6 +1,7 @@
 from crypt import methods
 from re import S
 from flask import Flask, render_template, request, redirect, send_file
+from extractor.rf import extract_crop
 import sqlite3
 import json
 
@@ -29,7 +30,12 @@ def search():
     elif land_moist == None:
         return redirect("/")
     else:
-        
-    return render_template("search.html")
+        crop = extract_crop(sun, temp, humid, carbon, land_moist)
+        if crop == '토마토':
+            return render_template("tomato.html")
+        elif crop == '딸기':
+            return render_template("strawberry.html")
+        elif crop == '파프리카':
+            return render_template("paprika.html")
 
 app.run(debug=True)
