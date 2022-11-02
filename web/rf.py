@@ -34,4 +34,14 @@ from sklearn.model_selection import cross_validate
 from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier(n_jobs=-1, random_state=42)
 
-def random_forest
+def convertString(arr):
+    str_result = ""
+    for s in arr:
+        str_result += str(s)
+
+    return str_result
+
+def extract_crop(a, b, c, d, e):
+    prediction = rf.predict([[a, b, c, d, e]])
+    crop_result = convertString(prediction)
+    return crop_result

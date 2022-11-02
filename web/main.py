@@ -13,11 +13,23 @@ def home():
 
 @app.route('/search')
 def search():
-    keyword = request.args.get("keyword")
-    if keyword == None:
+    sun = request.args.get("sun")
+    temp = request.args.get("temperature")
+    humid = request.args.get("humidity")
+    carbon = request.args.get("CO2")
+    land_moist = request.args.get("land_moist")
+    if sun == None:
+        return redirect("/")
+    elif temp == None:
+        return redirect("/")
+    elif humid == None:
+        return redirect("/")
+    elif carbon == None:
+        return redirect("/")
+    elif land_moist == None:
         return redirect("/")
     else:
-        # 모델링 값 결과 == tomato
+        
     return render_template("search.html")
 
 app.run(debug=True)
