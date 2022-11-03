@@ -19,15 +19,15 @@ def search():
     humid = request.args.get("humidity")
     carbon = request.args.get("CO2")
     land_moist = request.args.get("land_moist")
-    if sun == None:
+    if sun == '':
         return redirect("/")
-    elif temp == None:
+    elif temp == '':
         return redirect("/")
-    elif humid == None:
+    elif humid == '':
         return redirect("/")
-    elif carbon == None:
+    elif carbon == '':
         return redirect("/")
-    elif land_moist == None:
+    elif land_moist == '':
         return redirect("/")
     else:
         crop = extract_crop(sun, temp, humid, carbon, land_moist)
