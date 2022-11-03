@@ -38,4 +38,20 @@ def search():
         elif crop == '파프리카':
             return render_template("paprika.html")
 
+@app.route('/tpricing')
+def tomatoPrice():
+    return render_template("tomatoPrice.html")
+
+@app.route('/spricing')
+def strawberryPrice():
+    return render_template("strawPrice.html")
+
+@app.route('/ppricing')
+def paprikaPrice():
+    return render_template("paprikaPrice.html")
+
+@app.route('/distribution')
+def distribution():
+    return render_template("distribution.html")
+
 app.run(debug=True)
