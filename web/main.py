@@ -1,14 +1,11 @@
-from crypt import methods
 from re import S
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, redirect, send_file, make_response
 from extractor.rf import extract_crop
 from influx import sensor
-import sqlite3
-import json
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home():
     return render_template('home.html')
 
@@ -44,21 +41,10 @@ def get_sensor():
         return render_template("strawberry.html")
     elif rec == '파프리카':
         return render_template("paprika.html")
+    
+@app.route('/pricing')
+def get_price():
+    return render_template('strawPrice.html')
 
-@app.route('/tpricing')
-def tomatoPrice():
-    return render_template("tomatoPrice.html")
-
-@app.route('/spricing')
-def strawberryPrice():
-    return render_template("strawPrice.html")
-
-@app.route('/ppricing')
-def paprikaPrice():
-    return render_template("paprikaPrice.html")
-
-@app.route('/distribution')
-def distribution():
-    return render_template("distribution.html")
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True, host="127.0.0.1", port="5000")

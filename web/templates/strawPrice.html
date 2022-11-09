@@ -5,10 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strawberry Pricing</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/highcharts.css')}}">
 </head>
 <body>
-    <h1>딸기</h1>
-    <h3>도매가(2021년)</h3>
-    <h3>소매가(2021년)</h3>
+    <h1>딸기 가격 정보</h1>
+    <div id=container class="chart" style="width: 60%;">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script>
+        new Chart(document.addEventListener('DOMContentLoaded', () => {
+        const options = {
+            chart: {
+                type: 'column',
+                // 확대기능
+                zoomType: 'xy'
+            },
+            // 하단 링크설정
+            credits: {
+                // 제거하기
+                enabled: false
+            },
+            // 차트명
+            title: {
+                text: '딸기 연간 가격추이'
+            },
+            yAxis: {
+                title: {
+                    text: '가격'
+                }
+            }
+            };
+            $.get('딸기 상품 연간가격(단위 2kg).csv', csv => {
+                options.data = {
+                    csv
+                };
+                Highcharts.chart('container', options);
+            });
+        }))
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="./js/strawPrice.js"></script>
 </body>
 </html>
