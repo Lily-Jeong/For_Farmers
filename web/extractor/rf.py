@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # 데이터 로드, 쉼표 제거
-veggie = pd.read_csv('./dataset.csv', thousands= ',')
+veggie = pd.read_csv('web/dataset.csv', thousands= ',')
 # 필요없는 column 삭제
 veggie = veggie.drop(['수집일'], axis=1)
 # 결측치 제거 (36개)
