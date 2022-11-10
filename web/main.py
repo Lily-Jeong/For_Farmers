@@ -42,9 +42,17 @@ def get_sensor():
     elif rec == '파프리카':
         return render_template("paprika.html")
     
-@app.route('/pricing')
-def get_price():
-    return render_template('strawPrice.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/market')
+def market():
+    return render_template('market.html')
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
 
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port="5000")

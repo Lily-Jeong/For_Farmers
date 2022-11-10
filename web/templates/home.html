@@ -22,10 +22,18 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="market.html">Market</a></li>
-                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                            <li class="nav-item">
+                                <form action="/"><input class="nav-link" type="submit" value="Home" name="action"/></form>
+                            </li>
+                            <li class="nav-item">
+                                <form action="/about"><input class="nav-link" type="submit" value="About" name="action"/></form>
+                            </li>
+                            <li class="nav-item">
+                                <form action="/market"><input class="nav-link" type="submit" value="Market" name="action"/></form>
+                            </li>
+                            <li class="nav-item">
+                                <form action="/faq"><input class="nav-link" type="submit" value="FAQ" name="action"/></form>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -35,7 +43,7 @@
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
                         <h1 class="fw-bolder">하드웨어 Sensor Data</h1>
-                        <p class="lead fw-normal text-muted mb-0">Company portfolio</p>
+                        <a class="lead fw-normal text-muted mb-0" href="http://13.209.132.177:3000/d/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=now-6h&to=now&kiosk">실시간 센서 데이터 확인</a>
                     </div>
                     <div class="row gx-5">
                         <div class="col-lg-6">

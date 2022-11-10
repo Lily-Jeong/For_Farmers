@@ -2,29 +2,12 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-veggie = pd.read_csv('./dataset.csv')
+# 데이터 로드, 쉼표 제거
+veggie = pd.read_csv('./dataset.csv', thousands= ',')
+# 필요없는 column 삭제
 veggie = veggie.drop(['수집일'], axis=1)
-
-veggie = veggie.replace("1,011", 1011)
-veggie = veggie.replace("1,004", 1004)
-veggie = veggie.replace("1,039", 1039)
-veggie = veggie.replace("1,020", 1020)
-veggie = veggie.replace("1,003", 1003)
-veggie = veggie.replace("1,010", 1010)
-veggie = veggie.replace("1,014", 1014)
-veggie = veggie.replace("1,012", 1012)
-veggie = veggie.replace("1,009", 1009)
-veggie = veggie.replace("1,019", 1019)
-veggie = veggie.replace("1,025", 1025)
-veggie = veggie.replace("1,023", 1023)
-veggie = veggie.replace("1,018", 1018)
-veggie = veggie.replace("1,051", 1051)
-veggie = veggie.replace("1,021", 1021)
-veggie = veggie.replace("1,030", 1030)
-veggie = veggie.replace("1,002", 1002)
-veggie = veggie.replace("1,013", 1013)
-
-veggie = veggie.fillna(0)
+# 결측치 제거 (36개)
+veggie.dropna(inplace=True)
 
 data = veggie[['외부 일사량', '내부온도', '내부습도', '내부CO2', '지습']].to_numpy()
 target = veggie['품목명'].to_numpy()
@@ -32,7 +15,7 @@ train_input, test_input, train_target, test_target = train_test_split(data, targ
 
 from sklearn.model_selection import cross_validate
 from sklearn.ensemble import RandomForestClassifier
-rf = RandomForestClassifier(n_jobs=-1, random_state=42)
+rf = RandomForestClassifier(n_jobs=-1, random_state=42, n_estimators = 100, max_depth=21, min_samples_leaf=2)
 scores = cross_validate(rf, train_input, train_target, return_train_score=True, n_jobs=-1)
 rf.fit(train_input, train_target)
 
@@ -43,7 +26,7 @@ def convertString(arr):
 
     return str_result
 
-def extract_crop(a, b, c, d, e):
-    prediction = rf.predict([[a, b, c, d, e]])
+def extract_crop(sun, temp, humid, carbon, land_moist):
+    prediction = rf.predict([[sun, temp, humid, carbon, land_moist]])
     crop_result = convertString(prediction)
     return crop_result

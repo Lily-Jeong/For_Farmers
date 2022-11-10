@@ -18,10 +18,6 @@
         <h3>도매가(2021년)</h3>
         <figure class="highcharts-figure">
             <div id="container"></div>
-            <p class="highcharts-description">
-                Chart designed to show the difference between 0 and null in a 3D column
-                chart. A null point represents missing data, while 0 is a valid value.
-            </p>
         </figure>
         <script>
             Highcharts.chart('container', {
@@ -35,13 +31,10 @@
                     }
                 },
                 title: {
-                    text: 'External trade in goods by country, Norway 2021'
+                    text: '파프리카 도매가격, 2021'
                 },
                 subtitle: {
-                    text: 'Source: ' +
-                        '<a href="https://www.ssb.no/en/statbank/table/08804/"' +
-                        'target="_blank">SSB</a>'
-                },
+                    text: '단위: 5kg' },
                 plotOptions: {
                     column: {
                         depth: 25
