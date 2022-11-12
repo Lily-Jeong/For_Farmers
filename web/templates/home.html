@@ -38,47 +38,7 @@
                     </div>
                 </div>
             </nav>
-            <!-- Page Content-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">하드웨어 Sensor Data</h1>
-                        <a class="lead fw-normal text-muted mb-0" href="http://13.209.132.177:3000/d/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=now-6h&to=now&kiosk">실시간 센서 데이터 확인</a>
-                    </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <iframe src="http://13.209.132.177:3000/d-solo/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=1668037901789&to=1668059501789&kiosk=&theme=light&panelId=10" width="600" height="400" frameborder="0"></iframe>
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">일사량</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <iframe src="http://13.209.132.177:3000/d-solo/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=1668037840554&to=1668059440554&kiosk=&theme=light&panelId=6" width="600" height="400" frameborder="0"></iframe>
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">기온</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <iframe src="http://13.209.132.177:3000/d-solo/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=1668037714312&to=1668059314312&kiosk=&theme=light&panelId=4" width="600" height="400" frameborder="0"></iframe>
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">습도</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5 mb-lg-0">
-                                <iframe src="http://13.209.132.177:3000/d-solo/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=1668037940280&to=1668059540280&kiosk=&theme=light&panelId=2" width="600" height="400" frameborder="0"></iframe>
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">이산화탄소 농도</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative">
-                                <iframe src="http://13.209.132.177:3000/d-solo/8S2hhtD4k/for-project?orgId=1&refresh=10s&from=1668037966422&to=1668059566422&kiosk=&theme=light&panelId=8" width="600" height="400" frameborder="0"></iframe>
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">지습</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <!-- 데이터 검색 -->
             <section class="py-5 bg-light">
                 <div class="container px-5 my-5">
                     <h2 class="display-4 fw-bolder mb-4">나의 토양과 기후에 맞는 작물을 찾아볼까요?</h2>
@@ -94,6 +54,45 @@
                         <input type="number" name="land_moist" placeholder="지습" required>
                         <input type="submit" value="submit" name="action"/>
                     </form>
+                </div>
+            </section>
+            <!-- 그라파나 Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">하드웨어 키트로 읽어들이는 값을 확인해보세요!</h1>
+                        <a class="lead fw-normal text-muted mb-0" href="http://13.209.132.177:3000/d/ntUGLLv4k/new-dashboard?orgId=1&from=now-6h&to=now">실시간 센서 데이터 확인</a>
+                    </div>
+                    <div class="container px-5 my-5">
+                        <div class="text-center mb-5 ">
+                            <div class="row gx-5">
+                                <iframe src="http://13.209.132.177:3000/d-solo/ntUGLLv4k/new-dashboard?orgId=1&from=1668224213469&to=1668235013470&theme=light&panelId=12" width="600" height="400" frameborder="0"></iframe>                            </div>
+                            </div>
+                        <!-- <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <iframe src="http://13.209.132.177:3000/d-solo/ntUGLLv4k/new-dashboard?orgId=1&from=1668134370512&to=1668155970512&refresh=10s&panelId=4" width="600" height="400" frameborder="0"></iframe>
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">기온</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <iframe src="http://13.209.132.177:3000/d-solo/ntUGLLv4k/new-dashboard?orgId=1&from=1668134339109&to=1668155939109&refresh=10s&panelId=2" width="600" height="400" frameborder="0"></iframe>
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">습도</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5 mb-lg-0">
+                                <iframe src="http://13.209.132.177:3000/d-solo/ntUGLLv4k/new-dashboard?orgId=1&from=1668134301318&to=1668155901318&refresh=10s&panelId=10" width="600" height="400" frameborder="0"></iframe>
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">이산화탄소 농도</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative">
+                                <iframe src="http://13.209.132.177:3000/d-solo/ntUGLLv4k/new-dashboard?orgId=1&from=1668134146432&to=1668155746432&panelId=6" width="600" height="400" frameborder="0"></iframe>                                
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">지습</a>
+                            </div>
+                        </div> -->
+                    </div>
                 </div>
             </section>
         </main>
