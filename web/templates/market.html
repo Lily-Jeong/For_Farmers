@@ -57,84 +57,139 @@
                     </div>
                 </div>
             </div>
-            
+            </section>
             <!-- 이커머스 판매채널 section-->
             <section class="bg-light py-5">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">온라인 판매처</h1>
-                    </div>
-                    <div class="row gx-5 justify-content-center">
-                        <!-- 네이버 -->
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="card mb-5 mb-xl-0">
-                                <div class="card-body p-5">
-                                    <div class="mb-3">
-                                        <span class="fw-bolder">NAVER</span>  
+                <div class="row gx-5 justify-content-center">
+                    <div class="py-5 bg-light">
+                        <div class="container px-5 my-5">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-lg-8 col-xl-6">
+                                    <div class="text-center">
+                                        <h2 class="fw-bolder">온라인 판매처</h2>
+                                        <p class="lead fw-normal text-muted mb-5">직접 온라인 판매자가 되어, 더욱 다양한 소비자들에게 다가갈 수 있습니다!</p>
                                     </div>
-                                    <img class="card-img-top" src="{{url_for('static', filename='images/네이버스마트스토어.png')}}" width="150px">
-                                    
                                 </div>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>입점/등록/판매 수수료 무료</strong>
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>검색 시 내 상품 노출 가능</strong>
-                                    </li>
-                                </ul>
-                                    <div class="d-grid" ><a class="btn btn-primary" href="https://sell.smartstore.naver.com/?gclid=Cj0KCQiA37KbBhDgARIsAIzce16iwVYz225Pnol2uyhEoR8iRrNyVSbWw2WqWz-YiG7srp2aZgcJ6QoaAhwpEALw_wcB#/home/about">사이트로 이동</a></div>
+                            </div>
+                            <div class="row gx-5">
+                                <!-- 네이버 -->
+                                <div class="col-lg-4 mb-5">
+                                    <div class="card h-100 shadow border-0">
+                                        <img class="card-img-top" src="{{url_for('static', filename='images/naver_logo.png')}}" height="200px">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">네이버 스마트스토어</div>
+                                            <p class="card-text mb-0">
+                                                <ul class="list-unstyled mb-4">
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>국내 최대 포털 사이트로, 검색시 상품 노출이 가능</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>7개 풀필먼트 업체와 판매자들 간의 상호연결 서비스 제공</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>파워링크 광고를 통해 상품노출도 증가 가능</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>입점, 등록, 판매 수수료 무료</strong>
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                            <div class="d-grid" ><a class="btn btn-outline-primary" href="https://sell.smartstore.naver.com/?gclid=Cj0KCQiA37KbBhDgARIsAIzce16iwVYz225Pnol2uyhEoR8iRrNyVSbWw2WqWz-YiG7srp2aZgcJ6QoaAhwpEALw_wcB#/home/about">사이트로 이동</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 쿠팡 -->
+                                <div class="col-lg-4 mb-5">
+                                    <div class="card h-100 shadow border-0">
+                                        <div class="card h-100 shadow border-0">
+                                            <img class="card-img-top" src="{{url_for('static', filename='images/coupang_logo.png')}}" height="200px">
+                                            <div class="card-body p-4">
+                                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">쿠팡</div>
+                                                <p class="card-text mb-0">
+                                                    <ul class="list-unstyled mb-4">
+                                                        <li class="mb-2">
+                                                            <i class="bi bi-check text-primary"></i>
+                                                            <strong>국내 1위 소셜커머스. 모든 연령대, 모든 성별에서 가장 높은 사용자 기록</strong>
+                                                        </li>
+                                                        <li class="mb-2">
+                                                            <i class="bi bi-check text-primary"></i>
+                                                            <strong>24시간 배송 가능</strong>
+                                                        </li>
+                                                        <li class="mb-2">
+                                                            <i class="bi bi-check text-primary"></i>
+                                                            <strong>간편한 판매자 등록 프로세스(등록 5일안에 첫 매출 발생)</strong>
+                                                        </li>
+                                                        <li class="mb-2">
+                                                            <i class="bi bi-check text-primary"></i>
+                                                            <strong>타 채널 대비 낮은 식품 판매 수수료</strong>
+                                                        </li>
+                                                    </ul>
+                                                </p>
+                                                <div class="d-grid"><a class="btn btn-primary" href="https://marketplace.coupangcorp.com/s/?utm_source=google_sa_pc&utm_medium=paid&utm_campaign=go_sa_pc_br&gclid=Cj0KCQiA37KbBhDgARIsAIzce175EEhVSnLVCc51xuzN4sc1e-CziH6nYmMkP9HFQrQsD1yRSgp0EwAaApQXEALw_wcB">사이트로 이동</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 지마켓 -->
+                                <div class="col-lg-4 mb-5">
+                                    <div class="card h-100 shadow border-0">
+                                        <img class="card-img-top" src="{{url_for('static', filename='images/gmarket_logo.png')}}" height="200px">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">지마켓</div>
+                                            <p class="card-text mb-0">
+                                                <ul class="list-unstyled mb-4">
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>국내 소셜커머스 기업중 3위의 규모</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>주로 남성 사용자가 많지만, 1040 여성 사용자도 다수</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>당일 배송(스마일 배송) 가능</strong>
+                                                    </li>
+                                                    <li class="mb-2">
+                                                        <i class="bi bi-check text-primary"></i>
+                                                        <strong>온라인 판매 초보들을 위한 다양한 판매자 교육 컨텐츠 제공</strong>
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                            <div class="d-grid"><a class="btn btn-outline-primary" href="https://sslmember2.gmarket.co.kr/Registration/MemberRegistrationSeller">사이트로 이동</a></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- 쿠팡 -->
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="card mb-5 mb-xl-0">
-                                <div class="card-body p-5">
-                                    <div class="mb-3">
-                                        <span class="fw-bolder">Coupang</span>
-                                    </div>
-                                    <img class="card-img-top" src="{{url_for('static', filename='images/쿠팡.jpeg')}}" height="200px">
+                    </div>
+                    <!-- 지마켓 -->
+                    <!-- <div class="col-lg-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="mb-3">
+                                    <span class="fw-bolder">G마켓</span>
                                 </div>
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="mb-2">
-                                            <i class="bi bi-check text-primary"></i>
-                                            <strong>24시간 배송 가능</strong>
-                                        </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-check text-primary"></i>
-                                            <strong>쉽고 빠른 판매(등록 5일안에 첫 매출 발생)</strong>
-                                        </li>
-                                    </ul>
-                                    <div class="d-grid"><a class="btn btn-primary" href="https://marketplace.coupangcorp.com/s/?utm_source=google_sa_pc&utm_medium=paid&utm_campaign=go_sa_pc_br&gclid=Cj0KCQiA37KbBhDgARIsAIzce175EEhVSnLVCc51xuzN4sc1e-CziH6nYmMkP9HFQrQsD1yRSgp0EwAaApQXEALw_wcB">사이트로 이동</a></div>
-                                </div>
+                                <img class="card-img-top" src="{{url_for('static', filename='images/지마켓.png')}}" width="150px">
                             </div>
-                        <!-- 지마켓 -->
-                        <div class="col-lg-6 col-xl-4">
-                            <div class="card">
-                                <div class="card-body p-5">
-                                    <div class="mb-3">
-                                        <span class="fw-bolder">G마켓</span>
-                                    </div>
-                                    <img class="card-img-top" src="{{url_for('static', filename='images/지마켓.png')}}" width="150px">
-                                </div>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>오픈마켓 이용률이 높음</strong>
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="bi bi-check text-primary"></i>
-                                        <strong>당일 배송 가능</strong>
-                                    </li>
-                                </ul>
-                                    <div class="d-grid"><a class="btn btn-primary" href="https://sslmember2.gmarket.co.kr/Registration/MemberRegistrationSeller">사이트로 이동</a></div>
-                                    </div>
-                                </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>오픈마켓 이용률이 높음</strong>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>당일 배송 가능</strong>
+                                </li>
+                            </ul>
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="https://sslmember2.gmarket.co.kr/Registration/MemberRegistrationSeller">사이트로 이동</a></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
