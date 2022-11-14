@@ -91,16 +91,16 @@
                                 <div class="card-body p-4 py-lg-5">
                                     <div class="d-flex align-items-center justify-content-center">
                                         <div class="text-center">
-                                            <div class="h6 fw-bolder">Have more questions?</div>
+                                            <div class="h6 fw-bolder">더 궁금한 점이 있으신가요?</div>
                                             <p class="text-muted mb-4">
-                                                Contact us at
+                                                메일을 보내주시면 답변해드립니다!
                                                 <br />
-                                                <a href="#!">support@domain.com</a>
+                                                <a href="#!">superfreak.co.kr@gmail.com</a>
                                             </p>
                                             <div class="h6 fw-bolder">Follow us</div>
                                             <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
                                             <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
-                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="https://www.linkedin.com/in/lily-jeong-6a3a33193/"><i class="bi-linkedin"></i></a>
                                             <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
                                         </div>
                                     </div>
@@ -113,11 +113,13 @@
                         <h2 class="fw-bolder mb-3">Hardware</h2>
                         <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
                             <div class="accordion-item">
-                                <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUn" aria-expanded="true" aria-controls="collapseUn"><strong>어떠한 센서들이 사용되나요?</strong></button></h3>
+                                <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUn" aria-expanded="true" aria-controls="collapseUn"><strong>센서들은 어떤 것이 있나요? 통신은 어떻게 되나요?</strong></button></h3>
                                 <div class="accordion-collapse collapse show" id="collapseUn" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
-                                        <strong>온습도, 자외선, 토양수분, 이산화탄소 센서입니다. </strong>
-                                        <br>모델명은 온습도 센서(DHT11), 자외선 센서(GUVA-S12D), 토양수분 센서(C27), 이산화탄소 센서(MH-Z19B)이며 해당 센서들로 재배지의 환경 데이터를 수집합니다. <br>해당 데이터를 클라우드 DB에 저장한 후 우리의 학습된 모델을 통해 결과를 제시합니다.
+                                        <strong>온습도, 자외선, 토양수분, 이산화탄소 센서입니다. </strong><br>
+                                        모델명은 온습도 센서(DHT11), 자외선 센서(GUVA-S12D), 토양수분 센서(C27), 이산화탄소 센서(MH-Z19B)이며 <br>
+                                        Arduino(Slave)와 NodeMCU(Master) 간의 I2C통신을 하여 센서값을 읽고 Wifi모듈(esp8266)을 통해 해당 데이터를 DB로 저장합니다.<br>
+                                        DB에 저장된 데이터를 Grafana 통해 센서값을 그래프로 시각화하고 우리의 학습된 모델을 통과하여 작물을 제시합니다. 
                                         <!-- <code>.accordion-body</code> -->
                                     </div>
                                 </div>
@@ -126,30 +128,25 @@
                                 <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDeux" aria-expanded="false" aria-controls="collapseDeux"><strong>센서의 감도(Sensitivity)가 무엇인가요? 감도가 높아서 온도 편차가 심하다고 하는데...</strong></button></h3>
                                 <div class="accordion-collapse collapse" id="collapseDeux" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
-                                        <strong> 글리세린이라는 물질을 통해 감도를 낮출수 있습니다. </strong><br>
-                                        센서의 감도는 쉽게 말해 입력 변화에 대한 응답의 출력 변화의 비율이라고 할 수 있습니다. 
-                                        일반적으로 센서의 감도가 높다고 하면 측정 되어지는 온도의 값이 정확도가 높다고 할 수 있습니다.  
-                                        대신 감도가 높은 경우에는 환경적인 영향이 비교적 커서 요구 되어지는 온도보다 온도의 편차가 크게 나타날 수 있습니다. 
-                                        감도를 낮추는 방법의 하나로 하기 사진처럼 <span style="color: darkgreen;"><b>글리세린</b></span>이라는 물질을 통해 감도를 낮출수 있습니다. 
-                                        온도 편차가 심하시다고 생각되시면 하기 사진처럼 사용해 보시길 바랍니다.
-                                        <div class="col-lg-6"><img src="{{url_for('static', filename='images/감도.png')}}" width="400" /></div>
+                                        <div>
+                                            <strong> 글리세린이라는 물질을 통해 감도를 낮출수 있습니다. </strong><br>
+                                            센서의 감도는 쉽게 말해 입력 변화에 대한 응답의 출력 변화의 비율이라고 할 수 있습니다. <br>
+                                            일반적으로 센서의 감도가 높다고 하면 측정 되어지는 온도의 값이 정확도가 높다고 할 수 있습니다. 
+                                            대신 감도가 높은 경우에는 환경적인 영향이 비교적 커서 요구 되어지는 온도보다 온도의 편차가 크게 나타날 수 있습니다. <br>
+                                            감도를 낮추는 방법의 하나로 하기 사진처럼 <span style="color: orangered;"><b>글리세린</b></span>이라는 물질을 통해 감도를 낮출수 있습니다. <br>
+                                            온도 편차가 심하시다고 생각되시면 하기 사진처럼 사용해 보시길 바랍니다.
+                                        </div>
+                                        <div class="col-lg-6"><img src="{{url_for('static', filename='images/감도.png')}}" height="300"/></div>
                                         <!-- <code>.accordion-body</code> -->
                                         
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrois" aria-expanded="false" aria-controls="collapseTrois"><strong>센서와 통신은 어떻게 이루어져 있나요?</strong></button></h3>
+                                <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrois" aria-expanded="false" aria-controls="collapseTrois"><strong>회로도는 어떻게 구성되나요?</strong></button></h3>
                                 <div class="accordion-collapse collapse" id="collapseTrois" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
                                     <div class="accordion-body">
-                                        <strong>1. I2C(Inter-Integrated Circuit) 통신</strong><br>
-                                        I2C는 두 개의 신호선(SDA, SCL)으로 다수의 I2C 통신을 지원하는 디바이스와 데이터를 송/수신할 수 있는 통신방식입니다.<br>
-                                        하나의 마스터와 다수의 슬레이브로 연결이 구성되며, 마스터에서 기준클럭(SCL)을 생성하고, 이 클럭에 맞춰 데이터(SDA)를 전송 및 수신합니다.<br>
-                                        각 송신과 수신은 구분(송신과 수신이 동시에 이루어지지 않음)되어 있는 반이중(Half-Duplex) 방식입니다.<br>
-                                        각 슬레이브는 개별 주소(어드레스)를 가지고 있으며, 이 주소를 통해 식별이 가능합니다.<br><br>
-                                        <strong>2. Wifi모듈 (esp8266)</strong><br>
-                                        Wifi 모듈을 공유기에 연결하고 SSID, PASSWORD, URL 등 환경에 맞게 지정한 뒤 HTTP 요청을 서버로 보냅니다.<br>
-                                        TCP연결이 성공하면 HTTP Request 형식에 맞게 데이터가 전송됩니다.<br>
+                                        <div class="col-lg-6"><img src="{{url_for('static', filename='images/회로도.png')}}" height="550" width="700"/></div>
                                     </div>
                                 </div>
                             </div>
