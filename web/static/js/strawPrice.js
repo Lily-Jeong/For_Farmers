@@ -9,10 +9,10 @@ Highcharts.chart('container1', {
         }
     },
     title: {
-        text: '딸기 상품 도매가격, 2021'
+        text: '딸기 상품 도매가격, 2021 (2kg 단위)'
     },
     subtitle: {
-        text: '단위: 2kg' },
+        text: '출처: KAMIS 농산물 유통정보' },
     plotOptions: {
         column: {
             depth: 25

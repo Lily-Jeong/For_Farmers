@@ -14,7 +14,9 @@
       title: {
         text: '가까운 농산물 도매시장 위치를 확인해보세요!'
       },
-  
+      subtitle:{
+        text: '출처: 도매시장 통합홈페이지'
+      },
       accessibility: {
         description: 'Map where city locations have been defined using latitude/longitude.'
       },
