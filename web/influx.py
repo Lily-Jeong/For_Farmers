@@ -5,7 +5,7 @@ import certifi
 def sensor():
     bucket = "Project"
     org = "964cfc7201acc909"
-    token = "P0eXnp8A9CvTLlxEOb3WCTiaimw20fLlvCIa4EFvqjiZQNeTf6HzqgdZ6xNJdtwv82dcjuOYRi_WzO76JXQidg=="
+    token = "eoxc2TjOsoD_2590sMf62jY86IzrEIx2HzPpTbBdr05HQ4p4O7ob8x94uwdYs4kFGzOAPmRleu8ua7sNaz5hqw=="
     url="https://europe-west1-1.gcp.cloud2.influxdata.com"
 
     client = influxdb_client.InfluxDBClient(
@@ -26,7 +26,7 @@ def sensor():
     query_uv_avg = 'from(bucket:"Project")\
     |> range(start: -5m, stop: now())\
     |> filter(fn:(r) => r._measurement == "Sensor")\
-    |> filter(fn:(r) => r.SSID == "extend")\
+    |> filter(fn:(r) => r.SSID == "ktEgg_4247")\
     |> filter(fn:(r) => r._field == "UV")\
     |> filter(fn:(r) => r.device == "ESP8266")\
     |> mean(column: "_value")\
@@ -40,7 +40,7 @@ def sensor():
     query_temp_avg = 'from(bucket:"Project")\
     |> range(start: -5m, stop: now())\
     |> filter(fn:(r) => r._measurement == "Sensor")\
-    |> filter(fn:(r) => r.SSID == "extend")\
+    |> filter(fn:(r) => r.SSID == "ktEgg_4247")\
     |> filter(fn:(r) => r._field == "Temperature")\
     |> filter(fn:(r) => r.device == "ESP8266")\
     |> mean(column: "_value")\
@@ -54,7 +54,7 @@ def sensor():
     query_h_avg = 'from(bucket:"Project")\
     |> range(start: -5m, stop: now())\
     |> filter(fn:(r) => r._measurement == "Sensor")\
-    |> filter(fn:(r) => r.SSID == "extend")\
+    |> filter(fn:(r) => r.SSID == "ktEgg_4247")\
     |> filter(fn:(r) => r._field == "Humidity")\
     |> filter(fn:(r) => r.device == "ESP8266")\
     |> mean(column: "_value")\
@@ -68,7 +68,7 @@ def sensor():
     query_co2_avg = 'from(bucket:"Project")\
     |> range(start: -5m, stop: now())\
     |> filter(fn:(r) => r._measurement == "Sensor")\
-    |> filter(fn:(r) => r.SSID == "extend")\
+    |> filter(fn:(r) => r.SSID == "ktEgg_4247")\
     |> filter(fn:(r) => r._field == "Co2")\
     |> filter(fn:(r) => r.device == "ESP8266")\
     |> mean(column: "_value")\
@@ -82,7 +82,7 @@ def sensor():
     query_soil_avg = 'from(bucket:"Project")\
     |> range(start: -5m, stop: now())\
     |> filter(fn:(r) => r._measurement == "Sensor")\
-    |> filter(fn:(r) => r.SSID == "extend")\
+    |> filter(fn:(r) => r.SSID == "ktEgg_4247")\
     |> filter(fn:(r) => r._field == "Soil_moisture")\
     |> filter(fn:(r) => r.device == "ESP8266")\
     |> mean(column: "_value")\
