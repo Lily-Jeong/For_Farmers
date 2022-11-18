@@ -13,3 +13,5 @@ def extract_crop(sun, temp, humid, carbon, land_moist):
     prediction = rf_model.predict([[sun, temp, humid, carbon, land_moist]])
     crop_result = convertString(prediction)
     return crop_result
+
+
